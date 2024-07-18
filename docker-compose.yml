@@ -18,6 +18,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+    volumes:
+      - ./data/:/app/data/
 
 networks:
   app:

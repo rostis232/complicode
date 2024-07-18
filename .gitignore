@@ -1,5 +1,5 @@
 .vscode
 .env
 .idea
-chat_numbers.json
+data/chat_numbers.json
 Makefile

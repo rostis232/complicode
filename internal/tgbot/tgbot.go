@@ -9,6 +9,8 @@ import (
 	"os"
 )
 
+const filePath = "./data/chat_numbers.json"
+
 type TGBot struct {
 	Bot         *telego.Bot
 	chatNumbers []int64
@@ -35,7 +37,7 @@ func NewBot(token, key string) (*TGBot, error) {
 }
 
 func (b *TGBot) ReadFromFile() error {
-	file, err := os.Open("./chat_numbers.json")
+	file, err := os.Open(filePath)
 	if err != nil {
 		return fmt.Errorf("помилка відкриття файлу: %s", err)
 	}
@@ -49,7 +51,7 @@ func (b *TGBot) ReadFromFile() error {
 }
 
 func (b *TGBot) WriteToFile() error {
-	file, err := os.Create("./chat_numbers.json")
+	file, err := os.Create(filePath)
 	if err != nil {
 		return fmt.Errorf("помилка відкриття файлу: %s", err)
 	}
