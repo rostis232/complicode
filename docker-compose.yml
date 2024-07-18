@@ -8,6 +8,8 @@ services:
       dockerfile: complicode.dockerfile
     environment:
       - PORT=80
+      - TOKEN=${TOKEN}
+      - KEY=${KEY}
     restart: always
     networks:
       - app
