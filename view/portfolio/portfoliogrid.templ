@@ -1,0 +1,128 @@
+package portfolio
+
+templ PortfolioGrid() {
+       <section class="page-section bg-light" id="portfolio">
+                           <div class="container">
+                               <div class="text-center">
+                                   <h2 class="section-heading text-uppercase">Projects</h2>
+                                   <h3 class="section-subheading text-muted">Projects of our team.</h3>
+                               </div>
+                               <div class="row">
+                                   @HelpDesk()
+                                   @Facility()
+                                   @Autoparser()
+
+
+
+                               </div>
+                           </div>
+                       </section>
+}
+
+templ HelpDesk() {
+    <div class="col-lg-4 col-sm-6 mb-4">
+       <!-- Portfolio item 1-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/helpdesk.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">Help Desk</div>
+               <div class="portfolio-caption-subheading text-muted">CRM system for support operators</div>
+           </div>
+       </div>
+   </div>
+}
+
+templ Facility() {
+    <div class="col-lg-4 col-sm-6 mb-4">
+       <!-- Portfolio item 2-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/facility.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">Facilitation. Communities</div>
+               <div class="portfolio-caption-subheading text-muted">CRM system for facilitators</div>
+           </div>
+       </div>
+   </div>
+}
+
+templ Autoparser() {
+    <div class="col-lg-4 col-sm-6 mb-4">
+       <!-- Portfolio item 3-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/autoparser.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">AutoParser</div>
+               <div class="portfolio-caption-subheading text-muted">Data parsing and analysis</div>
+           </div>
+       </div>
+   </div>
+}
+
+templ PortfolioItem4() {
+	<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+       <!-- Portfolio item 4-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">Lines</div>
+               <div class="portfolio-caption-subheading text-muted">Branding</div>
+           </div>
+       </div>
+    </div>
+}
+
+templ PortfolioItem5() {
+	<div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+       <!-- Portfolio item 5-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">Southwest</div>
+               <div class="portfolio-caption-subheading text-muted">Website Design</div>
+           </div>
+       </div>
+   </div>
+}
+
+templ PortfolioItem6() {
+	<div class="col-lg-4 col-sm-6">
+       <!-- Portfolio item 6-->
+       <div class="portfolio-item">
+           <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+               <div class="portfolio-hover">
+                   <div class="portfolio-hover-content"><i class="fas fa-ellipsis fa-3x"></i></div>
+               </div>
+               <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+           </a>
+           <div class="portfolio-caption">
+               <div class="portfolio-caption-heading">Window</div>
+               <div class="portfolio-caption-subheading text-muted">Photography</div>
+           </div>
+       </div>
+   </div>
+}

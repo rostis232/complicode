@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  complicode:
+    build:
+      context: .
+      dockerfile: complicode.dockerfile
+    environment:
+      - PORT=80
+    restart: always
+    networks:
+      - app
+    ports:
+      - "${PORT}:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+
+networks:
+  app:
+

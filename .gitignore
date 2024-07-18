@@ -1,0 +1,5 @@
+.vscode
+.env
+.idea
+chat_numbers.json
+Makefile
