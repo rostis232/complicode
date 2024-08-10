@@ -28,15 +28,33 @@ func (h Handler) Home(c echo.Context) error {
 
 	fmt.Println(randNumber)
 
-	return render(c, view.Home(slogans[randNumber]))
+	return render(c, view.Home(slogans[randNumber], texts, en))
+}
+
+func (h Handler) HomeUA(c echo.Context) error {
+	slogans := []string{
+		"ТУТ МИ СТВОРЮЄМО КОД, ЯКИЙ ВИРІШУЄ ВАШІ ПРОБЛЕМИ",
+		"МИ ВІРИМО В КОД",
+		"НАШ КОД ВИРІШИТЬ ВАШУ ПРОБЛЕМУ",
+	}
+
+	randNumber := rand.Intn(len(slogans))
+
+	fmt.Println(randNumber)
+
+	return render(c, view.Home(slogans[randNumber], texts, ua))
 }
 
 func (h Handler) Send(c echo.Context) error {
 	name := c.FormValue("name")
+	lang := c.FormValue("lang")
+	if lang == "" {
+		lang = en
+	}
 	email := c.FormValue("email")
 	phone := c.FormValue("phone")
 	message := c.FormValue("message")
 	text := fmt.Sprintf("<b> Hey, Boss! CompliCode recieved new message!</b>\n<b>Name:</b> %s\n<b>Email:</b> %s\n<b>Phone:</b> %s\n<b>Message:</b> %s", name, email, phone, message)
 	h.TGBot.SendMessage(text)
-	return render(c, layout.Contact(true))
+	return render(c, layout.Contact(true, texts, lang))
 }

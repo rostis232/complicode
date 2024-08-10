@@ -29,6 +29,7 @@ func NewApp(token, key string) (*App, error) {
 	a.Server.Use(middleware.Recover())
 	a.Server.Static("/", "./static")
 	a.Server.GET("/", a.Handler.Home)
+	a.Server.GET("/ua", a.Handler.HomeUA)
 	a.Server.POST("/send", a.Handler.Send)
 
 	return &a, nil

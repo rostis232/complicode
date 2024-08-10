@@ -1,9 +1,9 @@
 package layout
 
-templ Masthead(slogan string) {
+templ Masthead(slogan string, texts map[string]map[string]string, lang string) {
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome to CompliCode!</div>
+            <div class="masthead-subheading">{ texts["masthead"][lang] }</div>
             <div class="masthead-heading text-uppercase">{ slogan }</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
         </div>

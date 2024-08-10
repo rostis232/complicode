@@ -1,6 +1,6 @@
 package layout
 
-templ Navigation() {
+templ Navigation(texts map[string]map[string]string, lang string) {
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="CompliCode" /></a>
@@ -10,11 +10,14 @@ templ Navigation() {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
-                    //<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    //<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">ENG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ua">УКР</a></li>
+                    <li class="nav-item"><span class="nav-link" >|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">{ texts["services"][lang] }</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">{ texts["projects"][lang] }</a></li>
+                    //<li class="nav-item"><a class="nav-link" href="#about">{ texts["about"][lang] }</a></li>
+                    //<li class="nav-item"><a class="nav-link" href="#team">{ texts["team"][lang] }</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">{ texts["contact"][lang] }</a></li>
                 </ul>
             </div>
         </div>

@@ -1,16 +1,16 @@
 package portfolio
 
-templ PortfolioGrid() {
+templ PortfolioGrid(texts map[string]map[string]string, lang string) {
        <section class="page-section bg-light" id="portfolio">
                            <div class="container">
                                <div class="text-center">
-                                   <h2 class="section-heading text-uppercase">Projects</h2>
-                                   <h3 class="section-subheading text-muted">Projects of our team.</h3>
+                                   <h2 class="section-heading text-uppercase">{ texts["projects"][lang] }</h2>
+                                   <h3 class="section-subheading text-muted">{ texts["projectsDescription"][lang] }</h3>
                                </div>
                                <div class="row">
-                                   @HelpDesk()
-                                   @Facility()
-                                   @Autoparser()
+                                   @HelpDesk(texts, lang)
+                                   @Facility(texts, lang)
+                                   @Autoparser(texts, lang)
 
 
 
@@ -19,7 +19,7 @@ templ PortfolioGrid() {
                        </section>
 }
 
-templ HelpDesk() {
+templ HelpDesk(texts map[string]map[string]string, lang string) {
     <div class="col-lg-4 col-sm-6 mb-4">
        <!-- Portfolio item 1-->
        <div class="portfolio-item">
@@ -30,14 +30,14 @@ templ HelpDesk() {
                <img class="img-fluid" src="assets/img/portfolio/helpdesk.jpg" alt="..." />
            </a>
            <div class="portfolio-caption">
-               <div class="portfolio-caption-heading">Help Desk</div>
-               <div class="portfolio-caption-subheading text-muted">CRM system for support operators</div>
+               <div class="portfolio-caption-heading">{ texts["helpDeskTitle"][lang] }</div>
+               <div class="portfolio-caption-subheading text-muted">{ texts["helpDeskShortDescription"][lang] }</div>
            </div>
        </div>
    </div>
 }
 
-templ Facility() {
+templ Facility(texts map[string]map[string]string, lang string) {
     <div class="col-lg-4 col-sm-6 mb-4">
        <!-- Portfolio item 2-->
        <div class="portfolio-item">
@@ -48,14 +48,14 @@ templ Facility() {
                <img class="img-fluid" src="assets/img/portfolio/facility.jpg" alt="..." />
            </a>
            <div class="portfolio-caption">
-               <div class="portfolio-caption-heading">Facilitation. Communities</div>
-               <div class="portfolio-caption-subheading text-muted">CRM system for facilitators</div>
+               <div class="portfolio-caption-heading">{ texts["facilityTitle"][lang] }</div>
+               <div class="portfolio-caption-subheading text-muted">{ texts["facilityShortDescription"][lang] }</div>
            </div>
        </div>
    </div>
 }
 
-templ Autoparser() {
+templ Autoparser(texts map[string]map[string]string, lang string) {
     <div class="col-lg-4 col-sm-6 mb-4">
        <!-- Portfolio item 3-->
        <div class="portfolio-item">
@@ -66,8 +66,8 @@ templ Autoparser() {
                <img class="img-fluid" src="assets/img/portfolio/autoparser.jpg" alt="..." />
            </a>
            <div class="portfolio-caption">
-               <div class="portfolio-caption-heading">AutoParser</div>
-               <div class="portfolio-caption-subheading text-muted">Data parsing and analysis</div>
+               <div class="portfolio-caption-heading">{ texts["autoParserTitle"][lang] }</div>
+               <div class="portfolio-caption-subheading text-muted">{ texts["autoParserShortDescription"][lang] }</div>
            </div>
        </div>
    </div>

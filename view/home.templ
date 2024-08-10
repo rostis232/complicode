@@ -6,7 +6,7 @@ import (
     "github.com/rostis232/complicode/view/services"
     )
 
-templ Home(slogan string) {
+templ Home(slogan string, texts map[string]map[string]string, lang string) {
     <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -14,7 +14,7 @@ templ Home(slogan string) {
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>CompliCode - Software Development Company | we solve your problems using code</title>
+                <title>{ texts["title"][lang] }</title>
                 <!-- Favicon-->
                 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
                 <!-- Font Awesome icons (free version)-->
@@ -27,13 +27,13 @@ templ Home(slogan string) {
             </head>
             <body id="page-top">
                 <!-- Navigation-->
-                @layout.Navigation()
+                @layout.Navigation(texts, lang)
                 <!-- Masthead-->
-                @layout.Masthead(slogan)
+                @layout.Masthead(slogan, texts, lang)
                 <!-- Services-->
-                @services.Services()
+                @services.Services(texts, lang)
                 <!-- Portfolio Grid-->
-                @portfolio.PortfolioGrid()
+                @portfolio.PortfolioGrid(texts, lang)
                 <!-- About-->
                 //@layout.About()
                 <!-- Team-->
@@ -41,31 +41,20 @@ templ Home(slogan string) {
                 <!-- Clients-->
                 @layout.Clients()
                 <!-- Contact-->
-                @layout.Contact(false)
+                @layout.Contact(false, texts, lang)
                 <!-- Footer-->
                 @layout.Footer()
                 <!-- Portfolio Modals-->
                 <!-- Portfolio item 1 modal popup-->
-                @portfolio.Modal1()
+                @portfolio.Modal1(texts, lang)
                 <!-- Portfolio item 2 modal popup-->
-                @portfolio.Modal2()
+                @portfolio.Modal2(texts, lang)
                 <!-- Portfolio item 3 modal popup-->
-                @portfolio.Modal3()
-                <!-- Portfolio item 4 modal popup-->
-                @portfolio.Modal4()
-                <!-- Portfolio item 5 modal popup-->
-                @portfolio.Modal5()
-                <!-- Portfolio item 6 modal popup-->
-                @portfolio.Modal6()
+                @portfolio.Modal3(texts, lang)
                 <!-- Bootstrap core JS-->
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
                 <!-- Core theme JS-->
                 <script src="js/scripts.js"></script>
-                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-                <!-- * *                               SB Forms JS                               * *-->
-                <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-                <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-                <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
             </body>
         </html>
 }

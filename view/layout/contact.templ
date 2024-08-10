@@ -1,53 +1,49 @@
 package layout
 
-templ Contact(sent bool) {
+templ Contact(sent bool, texts map[string]map[string]string, lang string) {
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
             if sent {
-            <h2 class="section-heading text-uppercase">Thank You! Your message is sent</h2>
+            <h2 class="section-heading text-uppercase">{ texts["messageSent"][lang] }</h2>
             } else {
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h2 class="section-heading text-uppercase">{ texts["contactus"][lang] }</h2>
             }
             </div>
             if !sent {
-            @ContactForm()
+            @ContactForm(texts, lang)
             }
         </div>
     </section>
 }
 
-templ ContactForm() {
+templ ContactForm(texts map[string]map[string]string, lang string) {
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     <form hx-post="/send" hx-target="#contact" id="contactForm" data-sb-form-api-token="API_TOKEN">
         <div class="row align-items-stretch mb-5">
             <div class="col-md-6">
                 <div class="form-group">
                     <!-- Name input-->
-                    <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required />
-                    <div class="invalid-feedback">A name is required.</div>
+                    <input class="form-control" id="name" name="name" type="text" placeholder={ texts["name"][lang] } required />
                 </div>
                 <div class="form-group">
                     <!-- Email address input-->
-                    <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required />
-                    <div class="invalid-feedback">An email is required.</div>
-                    <div class="invalid-feedback">Email is not valid.</div>
+                    <input class="form-control" id="email" name="email" type="email" placeholder={ texts["email"][lang] } required />
                 </div>
                 <div class="form-group mb-md-0">
                     <!-- Phone number input-->
-                    <input class="form-control" id="phone" name="phone" type="tel" placeholder="Your Phone"  />
-                    <div class="invalid-feedback">A phone number is required.</div>
+                    <input class="form-control" id="phone" name="phone" type="tel" placeholder={ texts["phone"][lang] }  />
                 </div>
+                    <input class="form-control" id="lang" name="lang" type="text" value={ lang } hidden />
             </div>
             <div class="col-md-6">
                 <div class="form-group form-group-textarea mb-md-0">
                     <!-- Message input-->
-                    <textarea class="form-control" id="message" name="message" placeholder="Your Message *" required></textarea>
-                    <div class="invalid-feedback" >A message is required.</div>
+                    <textarea class="form-control" id="message" name="message" placeholder={ texts["message"][lang] } required></textarea>
                 </div>
             </div>
         </div>
         <!-- Submit Button-->
-        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+        <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">{ texts["sendButton"][lang] }</button></div>
     </form>
 }

@@ -1,74 +1,74 @@
 package services
 
-templ Services() {
+templ Services(texts map[string]map[string]string, lang string) {
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Services</h2>
+                <h2 class="section-heading text-uppercase">{ texts["services"][lang] }</h2>
                 //<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row text-center">
-                @WebDevelopment()
-                @Parsing()
-                @Telegram()
-                @Backend()
-                @Frontend()
+                @WebDevelopment(texts, lang)
+                @Parsing(texts, lang)
+                @Telegram(texts, lang)
+                @Backend(texts, lang)
+                @Frontend(texts, lang)
             </div>
         </div>
     </section>
 }
 
-templ WebDevelopment(){
+templ WebDevelopment(texts map[string]map[string]string, lang string){
     <div class="col-md-4">
         <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-laptop-code fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Web Development</h4>
-        <p class="text-muted">We provide end-to-end web application development services from gathering stakeholder requirements to deployment and support.</p>
+        <h4 class="my-3">{ texts["webDevTitle"][lang] }</h4>
+        <p class="text-muted">{ texts["webDevDescription"][lang] }</p>
     </div>
 }
 
-templ Parsing(){
+templ Parsing(texts map[string]map[string]string, lang string){
     <div class="col-md-4">
         <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-file-shield fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Data Parsing & Web Scraping</h4>
-        <p class="text-muted">We specialize in extracting and processing data from online sources, transforming raw information into structured insights for seamless integration and actionable business intelligence.</p>
+        <h4 class="my-3">{ texts["parsingTitle"][lang] }</h4>
+        <p class="text-muted">{ texts["parsingDescription"][lang] }</p>
     </div>
 }
 
-templ Telegram(){
+templ Telegram(texts map[string]map[string]string, lang string){
     <div class="col-md-4">
         <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-robot fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Bot Development</h4>
-        <p class="text-muted">We offer expert bot development services for Telegram and other messaging platforms, handling everything from initial bot design to deployment and optimization, ensuring seamless integration and enhanced user engagement.</p>
+        <h4 class="my-3">{ texts["telegramTitle"][lang] }</h4>
+        <p class="text-muted">{ texts["telegramDescription"][lang] }</p>
     </div>
 }
 
-templ Backend(){
+templ Backend(texts map[string]map[string]string, lang string){
     <div class="col-md-4">
         <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-brands fa-golang fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Backend Development</h4>
-        <p class="text-muted">Our backend development services encompass the entire spectrum from architecture design to implementation and optimization, ensuring robust functionality and scalability for your web applications, APIs, and systems integration needs.</p>
+        <h4 class="my-3">{ texts["backendTitle"][lang] }</h4>
+        <p class="text-muted">{ texts["backendDescription"][lang] }</p>
     </div>
 }
 
-templ Frontend(){
+templ Frontend(texts map[string]map[string]string, lang string){
     <div class="col-md-4">
         <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-brands fa-react fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="my-3">Frontend Development</h4>
-        <p class="text-muted">We specialize in frontend development, crafting intuitive user interfaces and engaging experiences that resonate with your audience, from initial concept and design to seamless integration with backend systems, ensuring your web applications are both visually appealing and functionally robust.</p>
+        <h4 class="my-3">{ texts["frontendTitle"][lang] }</h4>
+        <p class="text-muted">{ texts["frontendDescription"][lang] }</p>
     </div>
 }
