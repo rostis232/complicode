@@ -6,6 +6,16 @@ const (
 )
 
 var texts map[string]map[string]string
+var team []TeamMember
+
+type TeamMember struct{
+	Photo string
+	Name string
+	Position string
+	TwitteLink string
+	FacebookLink string
+	LinkedInLink string
+}
 
 func init() {
 	texts = map[string]map[string]string{
@@ -172,6 +182,17 @@ func init() {
 		"sendButton": {
 			ua: "Відправити",
 			en: "Send Message",
+		},
+	}
+
+	team = []TeamMember{
+		{
+			"",
+			"Rostyslav Pylypiv",
+			"Owner, Golang Developer",
+			"",
+			"",
+			"",
 		},
 	}
 }

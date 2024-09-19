@@ -26,7 +26,7 @@ func Footer() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer py-4\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-4 text-lg-start\">Copyright &copy; CompliCode 2024</div><div class=\"col-lg-4 my-3 my-lg-0\"></div><div class=\"col-lg-4 text-lg-end\"><a class=\"link-dark text-decoration-none\" href=\"#!\">complico.de</a></div></div></div></footer>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer py-4\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-lg-4 text-lg-start\">Copyright &copy; CompliCode 2024</div><div class=\"col-lg-4 my-3 my-lg-0\"></div><div class=\"col-lg-4 text-lg-end\"><a class=\"link-dark text-decoration-none\" href=\"/\">complico.de</a></div></div></div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
